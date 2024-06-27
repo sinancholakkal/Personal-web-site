@@ -90,20 +90,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <span class="block"></span>
                 </div>
                 <div class="form-wrapper">
-                    <form  id="userForm" action="https://api.web3forms.com/submit" method="POST" >
+                    <form name="myForm"  id="userForm" action="https://api.web3forms.com/submit" method="POST" >
                         <div class="d-flex flex-column">
                             <label>Your Name:</label>
                             <input type="hidden" name="access_key" value="d0488a6c-3096-4ba5-9e04-be9876a3ff46">
                             <!-- https://script.google.com/macros/s/AKfycbyLmxOB-LbXV434jd-wq3To71skKFLd1FB-ryESW-22-henFxNRPTTC1nN_wyLTnwKvKg/exec -->
-                            <input class="text-input" type="text" name="name" id="name" required>
+                            <input class="text-input" type="text" name="name" id="name" >
                         </div>
                         <div class="d-flex flex-column my-sm-5 my-3">
                             <label>Your Email Address:</label>
-                            <input class="text-input" type="email" name="email" id="email" required>
+                            <input class="text-input" type="email" name="email" id="email" >
                         </div>
                         <div class="d-flex flex-column my-sm-5 my-3">
                             <label>Your Address:</label>
-                            <input class="text-input" type="address" name="address" id="address" required>
+                            <input class="text-input" type="address" name="address" id="address" >
                         </div>
                         <!-- <div class="select">
                             <label>Details of Your Project:</label>
@@ -156,7 +156,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="message">
                                 <h2>Add Your Message</h2>
                             </div>
-                            <textarea name="message" id="message" required></textarea>
+                            <textarea name="message" id="message"></textarea>
                         </div>
                         <input class="submit" type="submit" value="Send">
                     </form>
@@ -175,6 +175,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </footer>
     <!-- //footer -->
     <!-- js -->
+
+<script>
+    function formValidate(){
+        var name=document.myForm.name.value
+        var email=document.myForm.email.value
+        var address=document.myForm.address.value
+        var message=document.myForm.message.value
+        if(name==""){
+            alert("Please enter the name")
+            return false
+        }else if(email==""){
+            alert('Please Enter The Email')
+            return false
+        }else if(address==""){
+            alert("Please Enter The Address")
+            return false
+        }else if(message==""){
+            alert("Please Enter The Message")
+            return false
+        }else{
+            true
+        }
+    }
+</script>
+	
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- few java snippets-->
